@@ -8,6 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NekasuLogo from "../assets/icons/Nekasu";
+import UpArrow from "../assets/images/UpArrow.png";
 import { Outlet } from "react-router";
 
 function NavItem({ label }) {
@@ -52,23 +53,20 @@ export function NavbarWithSimpleLinks() {
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <div className="flex flex-row items-center gap-2">
           <NekasuLogo />
-          <Typography
-            as="h1"
-            color="blue-gray"
-            className="text-2xl font-bold font-poppins text-[#134DE3] "
-          >
+          <span className="bg-gradient-to-b from-[#0EB059] to-[#134DE3] bg-clip-text text-transparent font-poppins font-bold text-2xl">
             Nekasu
-          </Typography>
+          </span>
         </div>
         <div className="hidden lg:block">
           <NavList />
         </div>
-        <button
-          color="text-[#6064DC] font-poppins text-2xl"
-          className="hidden lg:inline-block"
-          variant="text"
-        >
-          Register
+        <button className="flex flex-row items-center gap-x-2">
+          <span className="bg-gradient-to-b from-[#03FC6C] to-[#6064DC] bg-clip-text text-transparent font-poppins font-semibold text-2xl">
+            Register
+          </span>
+          <div>
+            <img src={UpArrow} alt="UpArrow" />
+          </div>
         </button>
         <IconButton
           size="sm"
