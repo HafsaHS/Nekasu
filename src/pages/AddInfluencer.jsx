@@ -6,6 +6,7 @@ import redCircle from "../assets/images/redCircle.png";
 import { Link } from "react-router";
 import { Select, Option } from "@material-tailwind/react";
 import TableInfluencer from "../components/TableInfluencer";
+import FilterSort from "../components/FilterSort";
 
 export default function AddInfluencer() {
   return (
@@ -39,15 +40,9 @@ export default function AddInfluencer() {
           R T
         </div>
       </div>
-      <div className="bg-white w-[1440px] h-[42px] shadow-lg flex flex-row items-center justify-around">
+      <div className="bg-white w-[1440px] h-[42px] shadow-lg flex justify-between p-5 items-center">
         User(S): 1000+
-        {/* <div className="w-[107px] h-[206px]">
-          <Select label="Filter by">
-            <Option>1</Option>
-            <Option>2</Option>
-            <Option>3</Option>
-          </Select>
-        </div> */}
+        <FilterSort />
       </div>
       <TableInfluencer />
     </div>

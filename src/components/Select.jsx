@@ -1,24 +1,28 @@
 import { useField } from "formik";
-import { Select, Option } from "@material-tailwind/react";
+import DownArrow from "../assets/images/downArrow.png";
 
 const FormikSelect = ({ label, options, ...props }) => {
   const [field, meta, helpers] = useField(props);
 
   return (
-    <div className="w-[247px] h-[56px] rounded-sm p-3">
-      <Select
+    <div className="relative">
+      <select
         label={label}
+        className="bg-[#D9D9D9] rounded w-[247px] h-[56px] border-0 focus-within:border-0 px-2 font-inter text-base font-light text-black/30 appearance-none"
         value={field.value}
         onChange={(value) => helpers.setValue(value)}
         onBlur={() => field.onBlur(field.name)}
         error={meta.touched && meta.error ? true : false}
       >
         {options.map((option) => (
-          <Option key={option.value} value={option.value}>
+          <option key={option.value} value={option.value}>
             {option.label}
-          </Option>
+          </option>
         ))}
-      </Select>
+      </select>
+      <div className="absolute right-4 top-1/2 -translate-y-1/2">
+        <img src={DownArrow} alt="Down Arrow" />
+      </div>
       {meta.touched && meta.error && (
         <div className="text-sm text-red-500 mt-1">{meta.error}</div>
       )}

@@ -7,6 +7,49 @@ import redCircle from "../assets/images/redCircle.png";
 import vector from "../assets/images/vector.png";
 import cover from "../assets/images/cover.png";
 import profilePhoto from "../assets/images/profilePhoto.png";
+import connection1 from "../assets/images/connection1.png";
+import connection2 from "../assets/images/connection2.png";
+import connection3 from "../assets/images/connection3.png";
+import connection4 from "../assets/images/connection4.png";
+import connection5 from "../assets/images/connection5.png";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Typography,
+} from "@material-tailwind/react";
+import addSign from "../assets/images/addSign.png";
+
+const SimilarConnectionsCard = ({ name, description }) => {
+  name = "Diufn Tiunfd";
+  description = "Travelling and Inspiration";
+  return (
+    <div className="w-[358px] h-[414px] shadow-2xs flex justify-center p-4">
+      <div className="w-[334px] h-[65px] flex flex-row items-center shadow-lg justify-center p-3 rounded-2xl">
+        <div className="flex justify-center p-2 gap-x-2">
+          <img
+            src={connection1}
+            alt="connection1"
+            className="w-[52px] h-[47px]"
+          />
+          <div className="flex flex-col items-start justify-center">
+            <h3 className="font-inter font-medium text-xl">{name}</h3>
+            <p className="font-normal font-inter text-base">{description}</p>
+          </div>
+        </div>
+        <div className="flex-1 flex justify-center items-center">
+          <div className="flex items-center">
+            <img
+              src={addSign}
+              alt="addSign"
+              className="w-[21.88px] h-[21.88px]"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function Profile() {
   return (
@@ -111,34 +154,40 @@ export default function Profile() {
           <div className="text-[32px] font-inter font-semibold mb-2 w-[290px] h-78px]">
             People with similar connections
           </div>
-          <ul>
-            <li className="mb-4">
-              <div className="flex items-center">
+          {/* <div className="w-[358px] h-[414px] shadow-lg">
+            <Card className="w-[334px] h-[65px] flex-row flex-start">
+              <CardHeader
+                shadow={true}
+                floated={false}
+                className="flex justify-center"
+              >
                 <img
-                  src="https://via.placeholder.com/50"
-                  alt="Similar Connection"
-                  className="w-[50px] h-[50px] rounded-full"
+                  src={connection1}
+                  alt="connection1"
+                  className="w-[52px] h-[47px]"
                 />
-                <div className="ml-4">
-                  <h3 className="text-lg font-semibold">Connection Name</h3>
-                  <p className="text-gray-600">Connection Bio</p>
+              </CardHeader>
+              <CardBody className="flex flex-row justify-center">
+                <div className="flex flex-col flex-start">
+                  <Typography className="font-inter font-medium text-xl">
+                    Diufn Tiunfd
+                  </Typography>
+                  <Typography className="font-normal font-inter text-base">
+                    Travelling and Inspiration
+                  </Typography>
                 </div>
-              </div>
-            </li>
-            <li className="mb-4">
-              <div className="flex items-center">
-                <img
-                  src="https://via.placeholder.com/50"
-                  alt="Similar Connection"
-                  className="w-[50px] h-[50px] rounded-full"
-                />
-                <div className="ml-4">
-                  <h3 className="text-lg font-semibold">Connection Name</h3>
-                  <p className="text-gray-600">Connection Bio</p>
+
+                <div className="flex flex-row justify-between items-center">
+                  <img
+                    src={addSign}
+                    alt="addSign"
+                    className="w-[21.88px] h-[21.88px]"
+                  />
                 </div>
-              </div>
-            </li>
-          </ul>
+              </CardBody>
+            </Card>
+          </div> */}
+          <SimilarConnectionsCard />
         </div>
       </div>
     </div>

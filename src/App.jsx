@@ -2,6 +2,7 @@ import { Button, Typography } from "@material-tailwind/react";
 import NavbarWithSimpleLinks from "./components/NavBar";
 import image from "./assets/images/spying.png";
 import image2 from "./assets/images/man.png";
+import Search from "./assets/images/search.png";
 import CountriesSelect from "./components/Countries";
 import ReusableSelect from "./components/Select";
 import { Formik, Form, Field } from "formik";
@@ -83,7 +84,7 @@ export default function App() {
       <NavbarWithSimpleLinks />
       <div className="bg-green-700 w-[1440px] h-[352px] flex justify-center flex-col items-center relative">
         {/* White Rectangle */}
-        <div className="bg-white w-[1226px] h-[187px] flex flex-row justify-center items-center">
+        <div className="bg-white w-[1226px] h-[187px] flex flex-row justify-center items-center rounded-2xl shadow-xl">
           <div className="flex items-center justify-center">
             <img src={image} alt="spying" className="w-[199px] h-[207px]" />
           </div>
@@ -95,7 +96,7 @@ export default function App() {
               <Typography variant="title" color="inherit">
                 &nbsp;
               </Typography>
-              <Typography className="font-inter font-extrabold text-purple-1 text-[32px]">
+              <Typography className="font-inter font-semibold text-purple-1 text-[32px]">
                 top creators and influencers
               </Typography>
             </div>
@@ -111,12 +112,12 @@ export default function App() {
               </Typography>
             </div>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center -translate-y-5">
             <img src={image2} alt="man" className="w-[200px] h-[226px]" />
           </div>
         </div>
         {/* Black Rectangle */}
-        <div className=" bg-white w-[909px] shadow-xl shadow-blue-gray-900 h-[256px] absolute transform translate-y-[89%] items-center">
+        <div className=" bg-white w-[909px] shadow-inner shadow-blue-gray-900 h-[256px] absolute transform translate-y-[87%] items-center rounded-[5px]">
           <Formik
             initialValues={{
               country: "",
@@ -133,8 +134,8 @@ export default function App() {
             }}
           >
             {({ values }) => (
-              <Form className="grid grid-rows-3 grid-flow-col gap-4 pt-4 justify-around items-center">
-                <FormikCountrySelect name="country" label="Select Country" />
+              <Form className="grid grid-rows-3 grid-flow-col gap-y-4 pt-4 justify-around items-center">
+                <FormikCountrySelect name="country" label="Country" />
 
                 <FormikSelect
                   name="average followers"
@@ -164,7 +165,15 @@ export default function App() {
                   label="Average Views"
                   options={averageViews}
                 />
-                <button type="submit">Submit</button>
+                <button
+                  type="submit"
+                  className="relative bg-[#43C17E] h-[56px] w-[247px] rounded shadow-xl font-inter font-bold text-xl text-white flex items-center justify-center text-center"
+                >
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2">
+                    <img src={Search} alt="Search" />
+                  </div>
+                  Search Results
+                </button>
               </Form>
             )}
           </Formik>
