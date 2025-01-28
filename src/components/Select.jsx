@@ -8,7 +8,7 @@ const FormikSelect = ({ label, options, ...props }) => {
     <div className="relative">
       <select
         label={label}
-        className="bg-[#D9D9D9] rounded w-[247px] h-[56px] border-0 focus-within:border-0 px-2 font-inter text-base font-light text-black/30 appearance-none"
+        className="bg-[#D9D9D9] rounded w-[247px] h-[56px] border-0 focus-within:border-0 px-3 font-inter text-base font-light text-black/30 appearance-none"
         value={field.value}
         onChange={(value) => helpers.setValue(value)}
         onBlur={() => field.onBlur(field.name)}
@@ -20,7 +20,7 @@ const FormikSelect = ({ label, options, ...props }) => {
           </option>
         ))}
       </select>
-      <div className="absolute right-4 top-1/2 -translate-y-1/2">
+      <div className="absolute right-[17px] top-1/2 -translate-y-1/2">
         <img src={DownArrow} alt="Down Arrow" />
       </div>
       {meta.touched && meta.error && (

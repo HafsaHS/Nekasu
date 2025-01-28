@@ -10,44 +10,124 @@ import PropTypes from "prop-types"; // Optional: for runtime type checking
 
 const defaultData = [
   {
-    profileAndAccounts: "John Doe",
-    subscribers: 12000,
-    followers: 15000,
-    engagementRate: 4.5,
-    estimatedReach: 13000,
-    avgReelsPlayers: 9000,
-  },
-  {
-    profileAndAccounts: "Jane Smith",
-    subscribers: 8000,
-    followers: 11000,
-    engagementRate: 6.3,
+    profileAndAccounts: {
+      name: "Yorem Ipsum",
+      title: "Fashion and Style",
+      avatar: "https://placehold.co/400x400?text=YI",
+    },
+    subscribers: 3500,
+    followers: 8000,
+    engagementRate: 6.5,
     estimatedReach: 9500,
-    avgReelsPlayers: 7200,
+    avgReelsPlayers: 1200,
   },
   {
-    profileAndAccounts: "Mike Johnson",
-    subscribers: 20000,
-    followers: 25000,
-    engagementRate: 5.8,
-    estimatedReach: 22000,
-    avgReelsPlayers: 18000,
+    profileAndAccounts: {
+      name: "Alice Green",
+      title: "Beauty Blogger",
+      avatar: "https://placehold.co/400x400?text=AG",
+    },
+    subscribers: 8500,
+    followers: 12000,
+    engagementRate: 7.8,
+    estimatedReach: 15000,
+    avgReelsPlayers: 2000,
   },
   {
-    profileAndAccounts: "Emily Davis",
-    subscribers: 5000,
-    followers: 7000,
-    engagementRate: 3.9,
-    estimatedReach: 6000,
-    avgReelsPlayers: 4000,
-  },
-  {
-    profileAndAccounts: "Chris Brown",
-    subscribers: 15000,
+    profileAndAccounts: {
+      name: "John Doe",
+      title: "Tech Enthusiast",
+      avatar: "https://placehold.co/400x400?text=JD",
+    },
+    subscribers: 11000,
     followers: 18000,
-    engagementRate: 5.2,
-    estimatedReach: 16000,
-    avgReelsPlayers: 11000,
+    engagementRate: 5.0,
+    estimatedReach: 25000,
+    avgReelsPlayers: 2500,
+  },
+  {
+    profileAndAccounts: {
+      name: "Emma Stone",
+      title: "Fitness Expert",
+      avatar: "https://placehold.co/400x400?text=ES",
+    },
+    subscribers: 7500,
+    followers: 9500,
+    engagementRate: 8.3,
+    estimatedReach: 14000,
+    avgReelsPlayers: 1500,
+  },
+  {
+    profileAndAccounts: {
+      name: "Oliver Brown",
+      title: "Travel Vlogger",
+      avatar: "https://placehold.co/400x400?text=OB",
+    },
+    subscribers: 9200,
+    followers: 11000,
+    engagementRate: 4.5,
+    estimatedReach: 14000,
+    avgReelsPlayers: 1700,
+  },
+  {
+    profileAndAccounts: {
+      name: "Sophia Lee",
+      title: "Fashion Designer",
+      avatar: "https://placehold.co/400x400?text=SL",
+    },
+    subscribers: 15000,
+    followers: 25000,
+    engagementRate: 9.2,
+    estimatedReach: 35000,
+    avgReelsPlayers: 3000,
+  },
+  {
+    profileAndAccounts: {
+      name: "Noah Davis",
+      title: "Food Critic",
+      avatar: "https://placehold.co/400x400?text=ND",
+    },
+    subscribers: 4300,
+    followers: 7000,
+    engagementRate: 5.7,
+    estimatedReach: 9500,
+    avgReelsPlayers: 1000,
+  },
+  {
+    profileAndAccounts: {
+      name: "Mia Johnson",
+      title: "Photographer",
+      avatar: "https://placehold.co/400x400?text=MJ",
+    },
+    subscribers: 6000,
+    followers: 8500,
+    engagementRate: 6.0,
+    estimatedReach: 11000,
+    avgReelsPlayers: 1300,
+  },
+  {
+    profileAndAccounts: {
+      name: "James Miller",
+      title: "Music Artist",
+      avatar: "https://placehold.co/400x400?text=JM",
+    },
+    subscribers: 20000,
+    followers: 35000,
+    engagementRate: 10.1,
+    estimatedReach: 50000,
+    avgReelsPlayers: 4500,
+  },
+  {
+    profileAndAccounts: {
+      name: "Chloe Williams",
+      title: "Lifestyle Blogger",
+      avatar: "https://placehold.co/400x400?text=CW",
+    },
+    subscribers: 5400,
+    followers: 9000,
+    engagementRate: 7.0,
+    estimatedReach: 12000,
+    avgReelsPlayers: 1400,
   },
 ];
 
@@ -56,7 +136,26 @@ const columnHelper = createColumnHelper();
 const columns = [
   columnHelper.accessor("profileAndAccounts", {
     id: "profileAndAccounts",
-    cell: (info) => info.getValue(),
+    cell: (info) => {
+      const { name, title, avatar } = info.getValue();
+      return (
+        <div className="flex items-left space-x-3">
+          <img
+            src={avatar}
+            alt={name}
+            className="w-[70px] h-[70px] rounded-full shadow-lg"
+          />
+          <div>
+            <p className="text-black font-inter font-normal text-base text-left ">
+              {name}
+            </p>
+            <p className="text-sm text-black/50 font-inter font-normal text-left italic">
+              {title}
+            </p>
+          </div>
+        </div>
+      );
+    },
     header: () => <span>Profile and Accounts</span>,
     size: 250,
   }),
@@ -139,78 +238,27 @@ function Table({ initialData = defaultData }) {
         </thead>
         <tbody className="w-[1398px] h-[126px] text-center">
           {table.getRowModel().rows.map((row) => (
-            <tr key={row.id}>
+            <tr
+              key={row.id}
+              className="shadow-lg"
+              onClick={() => (window.location.href = "/profile")}
+            >
               {row.getVisibleCells().map((cell) => (
                 <td
                   key={cell.id}
                   className="border border-gray-200 p-2 w-[1398px] h-[126px] font-inter font-normal text-base non-italic"
                 >
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  <a href="profile">
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </a>
                 </td>
               ))}
             </tr>
           ))}
         </tbody>
-        {/* <tfoot>
-          {table.getFooterGroups().map((footerGroup) => (
-            <tr key={footerGroup.id}>
-              {footerGroup.headers.map((header) => (
-                <th
-                  key={header.id}
-                  className="border border-gray-200 bg-gray-50 p-2 text-left"
-                >
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.footer,
-                        header.getContext()
-                      )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </tfoot> */}
       </table>
-      {/* <div className="h-4" />
-      {/* <button
-        onClick={rerender}
-        className="border rounded px-4 py-2 hover:bg-gray-50"
-      >
-        Rerender
-      </button> */}
     </div>
   );
 }
-
-// Optional: Runtime prop validation
-// Table.propTypes = {
-//   initialData: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       profileAndAccounts: PropTypes.string,
-//       subscribers: PropTypes.number,
-//       followers: PropTypes.number,
-//       engagementRate: PropTypes.number,
-//       estimatedReach: PropTypes.string,
-//       avgReelsPlayers: PropTypes.number,
-//     })
-//   ),
-// };
-
-// function App() {
-//   return (
-//     <div className="container mx-auto p-4 flex justify-center items-center">
-//       <Table />
-//     </div>
-//   );
-// }
-
-// const rootElement = document.getElementById("root");
-// if (!rootElement) throw new Error("Failed to find the root element");
-
-// ReactDOM.createRoot(rootElement).render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
 
 export default Table;

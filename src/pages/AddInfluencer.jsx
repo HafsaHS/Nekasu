@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarWithSimpleLinks from "../components/NavBar";
+import NavbarWithSimpleLinks from "../components/MainNavBar";
 import message from "../assets/images/message.png";
 import search from "../assets/images/search.png";
 import redCircle from "../assets/images/redCircle.png";
@@ -7,17 +7,18 @@ import { Link } from "react-router";
 import { Select, Option } from "@material-tailwind/react";
 import TableInfluencer from "../components/TableInfluencer";
 import FilterSort from "../components/FilterSort";
+import SubNavBar from "../components/SubNavBar";
 
 export default function AddInfluencer() {
   return (
     <div>
-      <NavbarWithSimpleLinks />
+      <SubNavBar />
       <div className="bg-light-blue flex w-[1440px] h-[52px] items-center gap-x-4 flex-row justify-end pr-5">
         <div>
           <img
             src={redCircle}
             alt="redCircle"
-            className="w-[26px] h-[17px] absolute top-20"
+            className="w-[26px] h-[17px] absolute top-[62px]"
           />
         </div>
         <div>
