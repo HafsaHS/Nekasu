@@ -117,11 +117,11 @@ export default function Profile() {
     <div>
       <SubNavBar />
       <div className="bg-light-blue flex w-[1440px] h-[52px] items-center gap-x-4 flex-row justify-between pr-5">
-        <div className="flex justify-items-start gap-x-4">
+        <div className="flex justify-items-start px-14">
           <img
             src={backArrow}
             alt="backArrow"
-            className="w-[29.07px] h-[36.89px] cursor-pointer pr-2"
+            className="w-[29.07px] h-[36.89px] cursor-pointer"
             onClick={handleBackClick}
           />
         </div>
@@ -242,7 +242,10 @@ export default function Profile() {
                 >
                   Download Profile
                 </button>
-                <div>
+                <div
+                  onClick={() => setIsChatOpen(!isChatOpen)}
+                  className="flex cursor-pointer"
+                >
                   <img
                     src={message}
                     alt="message"

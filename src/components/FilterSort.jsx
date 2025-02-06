@@ -10,7 +10,7 @@ export default function FilterSort() {
         <option>2</option>
         <option>3</option>
       </select>
-      <select className="w-[107px] h-[32.4px] border border-black">
+      <select className="w-28 h-8 border border-black">
         <option selected>
           Sort by
           {/* <img src="downArrow" alt="downArrow" className="w-[8px] h-[8px]" /> */}

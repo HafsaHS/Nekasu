@@ -2,6 +2,7 @@ import { Expand } from "lucide-react";
 import React from "react";
 import profilePhoto from "../assets/images/profilePhoto.png";
 import nekasuLogo from "../assets/images/nekasuLogo.png";
+import sendArrow from "../assets/images/sendArrow.png";
 
 const ChatWindow = ({ isChatExpanded, setIsChatExpanded }) => {
   return (
@@ -69,19 +70,14 @@ const ChatWindow = ({ isChatExpanded, setIsChatExpanded }) => {
               alt="profilePhoto"
               className="w-[35px] h-[35px] border-white border-[3px] rounded-full"
             />
-            <div className="bg-[#91EB9C] p-2 rounded-lg max-w-[70%]">
+            <div className="bg-[#91EB9C] p-2 rounded-lg max-w-[90%]">
               <p className="font-inter text-base font-normal">Hii</p>
             </div>
           </div>
 
           {/* Incoming Message */}
-          <div className="flex items-start gap-2">
-            <img
-              src="https://via.placeholder.com/30"
-              alt="Profile"
-              className="w-7 h-7 rounded-full"
-            />
-            <div className="bg-[#91EB9C] p-2 rounded-lg max-w-[70%]">
+          <div className="flex items-start px-10">
+            <div className="bg-[#91EB9C] p-2 rounded-lg max-w-[90%]">
               <p className="font-inter text-base font-normal">
                 I am Yami Kabarkasa
               </p>
@@ -89,20 +85,20 @@ const ChatWindow = ({ isChatExpanded, setIsChatExpanded }) => {
           </div>
 
           {/* Outgoing Message */}
-          <div className="flex justify-end flex-row-reverse ">
-            <img
-              src={nekasuLogo}
-              alt="nekasuLogo"
-              className="w-[35px] h-[35px] border-white border-[3px] rounded-full"
-            />
-            <div className="bg-[#91EB9C] p-2 rounded-lg max-w-[70%] text-right">
+          <div className="flex justify-end">
+            <div className="bg-[#91EB9C] p-2 rounded-lg max-w-[90%] text-right">
               <p className="font-inter text-base font-normal">
                 Hello Yami Kabarkasa
               </p>
             </div>
+            <img
+              src={nekasuLogo}
+              alt="nekasuLogo"
+              className="w-8 h-8 border-white border-[3px]"
+            />
           </div>
-          <div className="flex justify-end">
-            <div className="bg-[#91EB9C] p-2 rounded-lg max-w-[70%] text-right">
+          <div className="flex justify-end px-10">
+            <div className="bg-[#91EB9C] p-2 rounded-lg max-w-[90%] text-right">
               <p className="font-inter text-base font-normal">
                 Nice to meet you
               </p>
@@ -123,8 +119,9 @@ const ChatWindow = ({ isChatExpanded, setIsChatExpanded }) => {
             <span className="text-xl">🥰</span>
             <input
               className="font-inter text-base font-normal bg-[#D9D9D9] w-full"
-              value={"Type your message here ..."}
+              value={"Its great meating you"}
             ></input>
+            <img src={sendArrow} alt="sendArrow" className="w-6 h-6" />
           </div>
         </div>
       </div>

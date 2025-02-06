@@ -48,11 +48,7 @@ export function SubNavBar() {
   }, []);
 
   return (
-    <Navbar
-      color="transparent"
-      fullWidth
-      className="h-[63.21px] flex items-center"
-    >
+    <Navbar color="transparent" fullWidth className="h-16 flex items-center">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <div>
           <Link

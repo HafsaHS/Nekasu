@@ -143,7 +143,7 @@ const columns = [
           <img
             src={avatar}
             alt={name}
-            className="w-[70px] h-[70px] rounded-full shadow-lg"
+            className="w-16 h-16 rounded-full shadow-lg"
           />
           <div>
             <p className="text-black font-inter font-normal text-base text-left ">
@@ -236,7 +236,7 @@ function Table({ initialData = defaultData }) {
             </tr>
           ))}
         </thead>
-        <tbody className="w-[1398px] h-[126px] text-center">
+        <tbody className="w-full h-32 text-center">
           {table.getRowModel().rows.map((row) => (
             <tr
               key={row.id}
@@ -246,7 +246,7 @@ function Table({ initialData = defaultData }) {
               {row.getVisibleCells().map((cell) => (
                 <td
                   key={cell.id}
-                  className="border border-gray-200 p-2 w-[1398px] h-[126px] font-inter font-normal text-base non-italic"
+                  className="border border-gray-200 p-2 w-auto h-32 font-inter font-normal text-base non-italic"
                 >
                   <a href="profile">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}

@@ -13,21 +13,12 @@ export default function AddInfluencer() {
   return (
     <div>
       <SubNavBar />
-      <div className="bg-light-blue flex w-[1440px] h-[52px] items-center gap-x-4 flex-row justify-end pr-5">
+      <div className="bg-light-blue flex w-full h-14 items-center gap-x-4 flex-row justify-end pr-5">
         <div>
-          <img
-            src={redCircle}
-            alt="redCircle"
-            className="w-[26px] h-[17px] absolute top-[62px]"
-          />
+          <img src={redCircle} alt="redCircle" className="absolute top-16" />
         </div>
         <div>
-          <img
-            src={message}
-            alt="message"
-            className="w-[47px] h-[45px]"
-            aria-relevant="redCircle"
-          />
+          <img src={message} alt="message" aria-relevant="redCircle" />
         </div>
 
         <Link
@@ -41,7 +32,7 @@ export default function AddInfluencer() {
           R T
         </div>
       </div>
-      <div className="bg-white w-[1440px] h-[42px] shadow-lg flex justify-between p-5 items-center">
+      <div className="bg-white w-full h-10 shadow-lg flex justify-between p-5 items-center">
         User(S): 1000+
         <FilterSort />
       </div>
